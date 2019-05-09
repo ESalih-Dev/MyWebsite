@@ -1,0 +1,24 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "./build",
+    "rootDir": "./",
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "typeRoots": ["./node_modules/@types", "./src/typings"],
+    "esModuleInterop": true
+  },
+  "plugins": [
+    {"name": "typescript-plugin-css-modules"}
+  ],
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules/**/*"]
+}
