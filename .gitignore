@@ -4,3 +4,4 @@ credentials
 package-lock.json
 *.d.ts
 build
+dist
