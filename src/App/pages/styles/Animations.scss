@@ -1,0 +1,55 @@
+
+@keyframes glowRed {
+    0%, 100% { box-shadow: none }
+    50% { box-shadow: 0 0 10px 7px red }
+}
+
+@keyframes glowGreen {
+    0%, 100% { box-shadow: none }
+    50% { box-shadow: 0 0 10px 7px green }
+}
+
+@keyframes appear {
+    from { transform: translate(0px, 0px) }
+    to { transform: translate(0px, 30px) }
+}
+
+@keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes fadeout {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes rise {
+    0%, 30% { transform: translate(0px, 0px) }
+    100% { transform: translate(0px, -30px) }
+}
+
+@keyframes fall {
+    0% { transform: translate(0px, -30px)}
+    100% { transform: translate(0px, 0px)}
+}
+
+@keyframes type {
+    0%, 25% { width: 0% }
+    100% { width: 100% }
+}
+
+@keyframes untype {
+    0% { width: 100% }
+    100% { width: 0% }
+}
+
+@keyframes typeAndUntype {
+    0%, 30%, 100% { width: 0% }
+    55%, 85% { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+}

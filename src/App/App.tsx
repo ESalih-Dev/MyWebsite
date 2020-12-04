@@ -7,11 +7,9 @@ import './App.scss';
 class App extends Component {
   render() {
     const App = () => (
-        <div>
-            <Switch>
-                <Route exact path='/' component={Home}/>
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path='/' component={Home}/>
+        </Switch>
     );
     return (
         <Switch>

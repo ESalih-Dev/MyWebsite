@@ -1,9 +1,96 @@
+@import 'Animations.scss';
+
+:root {
+    --textSize: 14;
+}
+
 .notReadyYetBanner {
     border: 2px solid lightblue;
     border-radius: 25px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1vw;
+    font-size: 24px;
     text-align: center;
+    transition: color 1s ease;
+    color: white;
+}
+
+.typewriter {
+    display: inline-block;
+    padding-top: 40vh;
+    font-family: Courier;
+}
+
+@mixin textStyle {
+    display: inline-block;
+    overflow: hidden;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    font-size: 48px;
+    color: white;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+}
+
+.typewriterType {
+    @include textStyle();
+    animation:
+        type 2.5s steps(var(--textSize), end),
+        rise 0.75s ease-out 2.5s forwards,
+        blink .75s step-end infinite;
+}
+
+.typewriterUntype {
+    @include textStyle();
+    animation:
+        fall 2s ease-out forwards,
+        untype 1.5s steps(var(--textSize), end) forwards,
+        blink 0.75s step-end infinite;
+}
+
+.typewriterTypeAndUntype {
+    @include textStyle();
+    animation:
+        typeAndUntype 6s steps(var(--textSize), end),
+        blink .75s step-end infinite;
+}
+
+input {
+    font-family: Quicksand;
+    font-size: 18px;
+    text-align: center;
+    width: 190px;
+    height: 30px;
+    transition: 0.3s;
+
+    &:hover, &:active {
+        width: 200px;
+        height: 35px; 
+    }
+
+    &[glow='red'] {
+        margin-top: 0;
+        opacity: 1;
+        animation:
+            glowRed 2s ease-in-out -0.5s forwards;
+    }
+
+    &[glow='green'] {
+        margin-top: 0;
+        opacity: 1;
+        animation:
+            glowGreen 2s ease-in-out -0.5s forwards,
+            rise 1s ease-out forwards,
+            fadeout 1s ease-out forwards;
+    }
+}
+
+.enterNameBox {
+    margin-top: -30px;
+    opacity: 0;
+    animation:
+        appear 0.75s ease-out 9s forwards,
+        fadein 2s linear 9s forwards;
 }
